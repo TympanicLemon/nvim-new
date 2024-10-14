@@ -1,0 +1,33 @@
+vim.g.mapleader = " "
+
+vim.opt.backup = false
+vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.cmdheight = 0
+vim.opt.confirm = true
+vim.opt.expandtab = true
+vim.opt.fillchars = { eob = " " }
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.ignorecase = true
+vim.opt.laststatus = 3
+vim.opt.mouse = "a"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.pumheight = 10
+vim.opt.scrolloff = 15
+vim.opt.shiftwidth = 4
+vim.opt.showmode = false
+vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.splitbelow = true
+vim.opt.splitkeep = "screen"
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.termguicolors = true
+vim.opt.tabstop = 4
+vim.opt.title = true
+vim.opt.titlestring = "nvim"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+vim.opt.virtualedit = "block"
+vim.opt.wrap = false
