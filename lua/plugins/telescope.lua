@@ -7,12 +7,9 @@ return {
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
-			cond = function()
-				return vim.fn.executable("make") == 1
-			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
-		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		{ "nvim-tree/nvim-web-devicons" },
 	},
 	config = function()
 		local actions = require("telescope.actions")
@@ -24,18 +21,6 @@ return {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 					},
-				},
-				find_command = {
-					"rg",
-					"--hidden",
-					"--glob",
-					"!**/.git/*",
-					"--glob",
-					"!**/node_modules/*",
-					"--glob",
-					"!**/.idea/*",
-					"--glob",
-					"!**/.vscode/*",
 				},
 			},
 			extensions = {
@@ -54,8 +39,6 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 
-		-- It"s also possible to pass additional configuration options.
-		--  See `:help telescope.builtin.live_grep()` for information about particular keys
 		vim.keymap.set("n", "<leader>f/", function()
 			builtin.live_grep({
 				grep_open_files = true,
