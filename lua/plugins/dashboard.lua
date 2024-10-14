@@ -21,10 +21,10 @@ return {
 						key = "f",
 					},
 					{
-						desc = " Recent Files",
+						desc = " Projects",
 						group = "DiagnosticHint",
-						action = "Telescope oldfiles",
-						key = "r",
+						action = "Telescope projects",
+						key = "p",
 					},
 					{
 						desc = "Find Word",
