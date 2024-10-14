@@ -25,6 +25,18 @@ return {
 						["<C-j>"] = actions.move_selection_next,
 					},
 				},
+				find_command = {
+					"rg",
+					"--hidden",
+					"--glob",
+					"!**/.git/*",
+					"--glob",
+					"!**/node_modules/*",
+					"--glob",
+					"!**/.idea/*",
+					"--glob",
+					"!**/.vscode/*",
+				},
 			},
 			extensions = {
 				["ui-select"] = {
