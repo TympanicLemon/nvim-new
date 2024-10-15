@@ -43,17 +43,26 @@ return {
 				["<Down>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete({}),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-				["<C-l>"] = cmp.mapping(function()
-					if luasnip.expand_or_locally_jumpable() then
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						local entry = cmp.get_selected_entry()
+						if not entry then
+							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+						end
+						cmp.confirm()
+					elseif luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
+					else
+						fallback()
 					end
 				end, { "i", "s" }),
-				["<C-h>"] = cmp.mapping(function()
-					if luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
+				["<CR>"] = cmp.mapping(function(fallback)
+					if cmp.visible() and cmp.get_active_entry() then
+						cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+					else
+						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "i" }),
 			}),
 			sources = {
 				{
