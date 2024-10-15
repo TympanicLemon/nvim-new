@@ -22,14 +22,6 @@ return {
 						["<C-j>"] = actions.move_selection_next,
 					},
 				},
-				vimgrep_arguments = {
-					"rg",
-					"--hidden",
-					"--glob=!**/.git/*",
-					"--glob=!**/.idea/*",
-					"--glob=!**/.vscode/*",
-					"--glob=!**/package-lock.json",
-				},
 			},
 			extensions = {
 				["ui-select"] = {
