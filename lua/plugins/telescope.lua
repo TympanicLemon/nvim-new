@@ -22,10 +22,32 @@ return {
 						["<C-j>"] = actions.move_selection_next,
 					},
 				},
+				vimgrep_arguments = {
+					"rg",
+					"--hidden",
+					"--glob=!**/.git/*",
+					"--glob=!**/.idea/*",
+					"--glob=!**/.vscode/*",
+					"--glob=!**/package-lock.json",
+				},
 			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
+				},
+			},
+			pickers = {
+				find_files = {
+					hidden = true,
+					find_command = {
+						"rg",
+						"--files",
+						"--hidden",
+						"--glob=!**/.git/*",
+						"--glob=!**/.idea/*",
+						"--glob=!**/.vscode/*",
+						"--glob=!**/package-lock.json",
+					},
 				},
 			},
 		})
