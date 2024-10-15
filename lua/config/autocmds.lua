@@ -62,3 +62,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
+
+-- Autocommand to set terminal keymaps
+local terminal_utils = require("utils.terminal")
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "term://*",
+	callback = function()
+		terminal_utils.set_terminal_keymaps()
+	end,
+})
