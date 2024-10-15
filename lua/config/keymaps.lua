@@ -1,7 +1,7 @@
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above split" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+vim.keymap.set({ "n", "t" }, "<C-h>", "<C-w>h", { desc = "Move to left split" })
+vim.keymap.set({ "n", "t" }, "<C-j>", "<C-w>j", { desc = "Move to below split" })
+vim.keymap.set({ "n", "t" }, "<C-k>", "<C-w>k", { desc = "Move to above split" })
+vim.keymap.set({ "n", "t" }, "<C-l>", "<C-w>l", { desc = "Move to right split" })
 
 vim.keymap.set("n", "<S-h>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<S-l>", "<CMD>bnext<CR>", { desc = "Next buffer" })
